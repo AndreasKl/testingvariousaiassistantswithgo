@@ -1,0 +1,18 @@
+version: '3'
+
+tasks:
+  build:
+    cmds:
+      - go build -o app ./...
+    desc: Build the Go project
+
+  test:
+    cmds:
+      - go test ./...
+    desc: Run tests for the Go project
+
+  update-deps:
+    cmds:
+      - go get -u -t ./...
+      - go mod tidy
+    desc: Update dependencies for the Go project, including test dependencies
